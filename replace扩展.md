@@ -8,7 +8,7 @@
 //@Replace key替换的key desc描述
 
 
-//如 敌人在这里#radar.location -> 敌人在这里X :0 , Y:0 , Z:z
+//如 敌人在这里#radar.location -> 敌人在这里X :0 , Y:0 , Z:0
  @Reset(desc = "#x #y #z", name = "RadarLocation")
  private String radarlocation = "X :#x , Y:#y , Z:#z";
 
