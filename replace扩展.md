@@ -15,7 +15,7 @@
  /**
      * 
      * @param str 无具体作用
-     * @return 返回被替换的字符
+     * @return 返回要被替换的内容
      */
  @Replace(key = "#radar.location", desc = "雷声追踪最后一次追踪的位置")
  public String RadarLocation(String str) {
@@ -27,6 +27,26 @@
 
 }
 
+
+~~~
+
+
+#### ReplaceManager
+
+~~~java
+
+public String processAll(String str) {
+        for (Replace replace : replacems.keySet()) {
+            try {
+                str = str.replace(replace.key(), (String) replacems.get(replace).invoke(Config.getReplaces(), str));
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            }
+       }
+      return str;
+}
 
 ~~~
 
